@@ -61,25 +61,6 @@ h4 {
   padding-left: 1.8rem;
 }
 
-@media (min-width: 450px) {
-  .btn {
-    margin-top: 10px;
-  }
-  .photo {
-    width: 100%; /* Make the pictures fill the width of their container */
-    max-width: none; /* Remove the max-width constraint */
-    height: auto; /* Maintain the aspect ratio */
-  }
-  .col-10.col-sm-8.col-lg-6 {
-    margin-top: 20px; /* Add some spacing between photo and text */
-    margin-left: 0;
-  }
-  .topicTitle {
-    white-space: nowrap;
-    width: 29%;
-  }
-}
-
 .btn {
   box-shadow: 0 4px 12px 0 rgba(152, 160, 180, 10);
   padding: 10px;
@@ -154,4 +135,77 @@ section,
 a {
   color: var(--text-color);
   transition: color 0.4s ease;
+}
+
+
+@media (max-width: 768px) {
+  .photo {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    border-radius: 15%;
+  }
+
+  .profilePhoto {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .col-10.col-sm-8.col-lg-6 {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    text-align: center;
+  }
+
+  .btn {
+    width: 100%;
+    margin-top: 10px;
+    font-size: 14px;
+  }
+
+  .topicTitle {
+    font-size: 1.5rem;
+    width: auto;
+    white-space: normal;
+    text-align: center;
+  }
+
+  .description {
+    font-size: 1rem;
+    margin-left: 10px;
+  }
+
+  .footerText {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 450px) {
+  .btn {
+    padding: 8px;
+    font-size: 13px;
+  }
+
+  .lead {
+    font-size: 1rem;
+  }
+
+  .photo {
+    border-radius: 10%;
+  }
+
+  .profilePhoto {
+    border-width: 0.5rem;
+  }
+
+  .theme-toggle-btn {
+    width: 45px;
+    height: 45px;
+    font-size: 18px;
+    bottom: 15px;
+    left: 15px;
+  }
 }
