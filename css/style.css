@@ -1,108 +1,157 @@
-
-  body {
-    margin:0;
-  }
-  
-  .bg {
-    animation:slide 10s ease-in-out infinite alternate;
-    background-image: linear-gradient(-60deg, #36454F 50%, #000000 50%);
-    bottom:0;
-    left:-50%;
-    opacity:.5;
-    position:fixed;
-    right:-50%;
-    top:0;
-    z-index:-1;
-  }
-  
-  .bg2 {
-    animation-direction:alternate-reverse;
-    animation-duration:4s;
-  }
-  
-  .bg3 {
-    animation-duration:5s;
-  }
-  
-  @keyframes slide {
-    0% {
-      transform:translateX(-25%);
-    }
-    100% {
-      transform:translateX(25%);
-    }
-  }
-
-.d-block{
-    border-radius: 50%;
+:root {
+  --bg-color-1: #36454f;
+  --bg-color-2: #000000;
+  --text-color: #ffffff;
 }
 
-h4{
-    font-size: 20px;
+[data-bs-theme="light"] {
+  --bg-color-1: #e4e4e4;
+  --bg-color-2: #cfcfcf;
+  --text-color: #111111;
 }
 
+body {
+  margin: 0;
+}
 
-@media (min-width: 450px){
-    .btn{
-        margin-top: 10px;
-    }
-      .photo {
+.bg {
+  animation: slide 10s ease-in-out infinite alternate;
+  background-image: linear-gradient(
+    -60deg,
+    var(--bg-color-1) 50%,
+    var(--bg-color-2) 50%
+  );
+  bottom: 0;
+  left: -50%;
+  opacity: 0.5;
+  position: fixed;
+  right: -50%;
+  top: 0;
+  z-index: -1;
+  transition: background-image 0.5s ease;
+}
+
+.bg2 {
+  animation-direction: alternate-reverse;
+  animation-duration: 4s;
+}
+
+.bg3 {
+  animation-duration: 5s;
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(-25%);
+  }
+  100% {
+    transform: translateX(25%);
+  }
+}
+
+.d-block {
+  border-radius: 50%;
+}
+
+h4 {
+  font-size: 20px;
+}
+.job-dates {
+  display: inline-block;
+  padding-left: 1.8rem;
+}
+
+@media (min-width: 450px) {
+  .btn {
+    margin-top: 10px;
+  }
+  .photo {
     width: 100%; /* Make the pictures fill the width of their container */
     max-width: none; /* Remove the max-width constraint */
     height: auto; /* Maintain the aspect ratio */
   }
-      .col-10.col-sm-8.col-lg-6 {
-        margin-top: 20px; /* Add some spacing between photo and text */
-        margin-left: 0;
-    }
-    .topicTitle{
-        white-space: nowrap;
-        width: 29%;
-    }
-    
+  .col-10.col-sm-8.col-lg-6 {
+    margin-top: 20px; /* Add some spacing between photo and text */
+    margin-left: 0;
+  }
+  .topicTitle {
+    white-space: nowrap;
+    width: 29%;
+  }
 }
 
-.btn{
-    box-shadow: 0 4px 12px 0 rgba(152, 160, 180, 10);
-    padding: 10px;
-    font-size: 15px;
-    text-align: center;
-    font-weight: bold;
-    transition: 0.5s;
-    background-size: 200% auto;
-    color: #808080;
-    box-shadow: 0 0 20px #eee;
-    border-radius: 40px;
-    width: 175px;
+.btn {
+  box-shadow: 0 4px 12px 0 rgba(152, 160, 180, 10);
+  padding: 10px;
+  font-size: 15px;
+  text-align: center;
+  font-weight: bold;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: #808080;
+  box-shadow: 0 0 20px #eee;
+  border-radius: 40px;
+  width: 175px;
 }
-.footerText{
-    font-size: 18px;
+.footerText {
+  font-size: 18px;
 }
 
-.contact{
-    margin-left: 20px;
+.contact {
+  margin-left: 20px;
 }
-.profilePhoto{
-    height: 400px;
-    width: 420px;
-    border-radius: 50%;
-    border: solid #5A5A5A;
-    border-width: 1rem;
+.profilePhoto {
+  height: 400px;
+  width: 420px;
+  border-radius: 50%;
+  border: solid #5a5a5a;
+  border-width: 1rem;
 }
-.photo{
-    height: 325px;
-    width: 500px;
-    border-radius: 20%;
-    box-shadow: 0 0 30px #eee;
-    border: solid black;
+.photo {
+  height: 325px;
+  width: 500px;
+  border-radius: 20%;
+  box-shadow: 0 0 30px #eee;
+  border: solid black;
 }
-.lead{
-    font-size: 1.30rem;
+.lead {
+  font-size: 1.3rem;
 }
-.description{
-    font-size: 1.20rem;
-    margin-left: 30px;
+.description {
+  font-size: 1.2rem;
+  margin-left: 30px;
 }
-.topicTitle{
-    border-bottom:solid #0096FF;
+.topicTitle {
+  border-bottom: solid #0096ff;
+}
+
+.theme-toggle-btn {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  z-index: 1000;
+  background-color: #6c5ce7;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.theme-toggle-btn:hover {
+  background-color: #5a4fd9;
+}
+
+body,
+section,
+.lead,
+.description,
+.topicTitle,
+a {
+  color: var(--text-color);
+  transition: color 0.4s ease;
 }
